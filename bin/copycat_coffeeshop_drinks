@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-puts "Hello World"
+require '.lib/copycat_coffeeshop_drinks'
+
+copycat_coffeeshop_drinks::CLI.new.call

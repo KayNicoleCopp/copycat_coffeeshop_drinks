@@ -1,3 +1,5 @@
+# our CLI Controller
+
 class CopycatCoffeeshopDrinks::CLI
 
   def call
