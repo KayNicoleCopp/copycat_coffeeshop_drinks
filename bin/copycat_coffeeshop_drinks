@@ -2,4 +2,4 @@
 
 require_relative '..lib/copycat_coffeeshop_drinks'
 
-copycat_coffeeshop_drinks::CLI.new.call
+CopycatCoffeeshopDrinks::CLI.new.call
