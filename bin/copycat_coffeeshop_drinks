@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require '.lib/copycat_coffeeshop_drinks'
+require_relative '..lib/copycat_coffeeshop_drinks'
 
 copycat_coffeeshop_drinks::CLI.new.call
