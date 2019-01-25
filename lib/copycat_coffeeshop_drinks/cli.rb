@@ -3,11 +3,11 @@
 class CopycatCoffeeshopDrinks::CLI
 
   def call  #instance method
-    puts "Welcome fellow coffee lovers!"
-    puts "Ready to save a little money and still enjoy a tasty cup-o-joe?"
-    puts "Below are 22 coffee drinks you can make in the comfort of your own kitchen!"
-    list_drinks
-    main_menu
+    puts "Welcome Fellow Coffee Lovers!"
+    puts "Please choose 1 of my 5 favorite coffee drinks from the list below that you'd like to make!"
+    puts "Type either 'creamy caramel mocha', 'holiday peppermint mocha', 'creamy irish coffee', 'iced coffee latte', or 'hazelnut coffee'"
+    input = gets.strip.downcase
+    puts input
   end
 
 end
