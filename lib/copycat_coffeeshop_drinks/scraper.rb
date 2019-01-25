@@ -1,6 +1,6 @@
 class CopycatCoffeeshopDrinks::Scraper
 
-  def scrape_drink_names
+  def self.scrape_drink_names(url)
     page = Nokogiri::HTML(open(https://www.tasteofhome.com/collection/homemade-coffee-shop-drinks/view-all/))
     #name = doc.css
   end
