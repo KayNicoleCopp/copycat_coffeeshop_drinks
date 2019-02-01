@@ -16,19 +16,23 @@ class CopycatCoffeeshopDrinks::CLI
     when "holiday peppermint mocha"
       puts "in holiday peppermint mocha"
       #Scrape the holiday peppermint mocha page
-      #https://www.tasteofhome.com/recipes/holiday-peppermint-mocha/
+      url = "https://www.tasteofhome.com/recipes/holiday-peppermint-mocha/"
+      CopycatCoffeeshopDrinks::Scraper.scrape_drink_names(url)
     when "creamy irish coffee"
       puts "in creamy irish coffee"
       #Scrape the creamy irish coffee page
-      #https://www.tasteofhome.com/recipes/creamy-irish-coffee/
+      url = "https://www.tasteofhome.com/recipes/creamy-irish-coffee/"
+      CopycatCoffeeshopDrinks::Scraper.scrape_drink_names(url)
     when "iced coffee latte"
       puts "in iced coffee latte"
       #Scrape the iced coffee latte page
-      #https://www.tasteofhome.com/recipes/iced-coffee-latte/
+      url = "https://www.tasteofhome.com/recipes/iced-coffee-latte/"
+      CopycatCoffeeshopDrinks::Scraper.scrape_drink_names(url)
     when "hazelnut coffee"
       puts "in hazelnut coffee"
       #Scrape the hazelnut coffee page
-      #https://www.tasteofhome.com/recipes/hazelnut-coffee/
+      url = "https://www.tasteofhome.com/recipes/hazelnut-coffee/"
+      CopycatCoffeeshopDrinks::Scraper.scrape_drink_names(url)
     when "exit"
       puts "Goodbye!"
     else
