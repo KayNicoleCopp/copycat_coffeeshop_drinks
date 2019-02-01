@@ -1,14 +1,15 @@
 class CopycatCoffeeshopDrinks::Scraper
 
-  def self.scrape_drink_names(url)
-    page = Nokogiri::HTML(open(url))
+  def self.scrape_drinks(url)
+    #page = Nokogiri::HTML(open(url))
     #name = doc.css
+    puts "In the scraper class"
   end
 
-  def scrape_drink_ingredients
+  def scrape_ingredients
   end
 
-  def scrape_drink_instructions
+  def scrape_instructions
   end
 
 end
