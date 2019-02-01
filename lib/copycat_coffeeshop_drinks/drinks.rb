@@ -1,2 +1,2 @@
-class CopycatCoffeeshopDrinks::drinks
+class CopycatCoffeeshopDrinks::Drinks
 end
