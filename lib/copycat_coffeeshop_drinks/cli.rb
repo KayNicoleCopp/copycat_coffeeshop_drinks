@@ -42,3 +42,18 @@
 #   end
 #
 # end
+class CopycatCoffeeshopDrinks::CLI
+
+  def call  #instance method
+    puts "Welcome Fellow Coffee Lovers!"
+CopycatCoffeeshopDrinks::Scraper.scrape_drinks
+    list_drinks
+    puts "Please choose your favorite coffee drink from the list below that you'd like to make!"
+    input = gets.strip.downcase
+  end
+
+  def list_drinks
+
+  end
+
+end
