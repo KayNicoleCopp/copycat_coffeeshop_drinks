@@ -1,9 +1,8 @@
 class CopycatCoffeeshopDrinks::Drinks
-attr_accessor :name, :url
+attr_accessor :title
 @@all = []
-def initialize(name, url)
-  @name = name
-  @url = url
+def initialize(title)
+  @title = title
   @@all << self #saving or remembering the object
 end
 
