@@ -4,8 +4,10 @@ class CopycatCoffeeshopDrinks::Scraper
     webpage = Nokogiri::HTML(open("https://www.tasteofhome.com/collection/homemade-coffee-shop-drinks/view-all/"))
     drinks = webpage.css("div.listicle-page")
     drinks.each do |drink_card|
-      drink = CopycatCoffeeshopDrinks::Drinks.new
-      drink.title = drink_card.css("h4.listicle-page__title a").text
+      title = drink_card.css("h4.listicle-page__title a").text
+binding.pry
+      link = drink_card.css("h4.listicle-page__title href")
+      drink = CopycatCoffeeshopDrinks::Drinks.new(title)
     end
 
   #h4.listicle-page__title a.href = possible link
