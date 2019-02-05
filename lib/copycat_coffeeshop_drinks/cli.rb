@@ -5,7 +5,7 @@ class CopycatCoffeeshopDrinks::CLI
     puts "Below is a list of fancy coffee drinks you can make in the comfort of your own kitchen!"
     puts "*****"
     list_drinks
-    #main_menu (create a main menu method for selecting drinks)
+    #main_menu (create a main_menu method for selecting drinks)
   end
 
   def list_drinks
