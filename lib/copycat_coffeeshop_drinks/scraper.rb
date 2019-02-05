@@ -5,8 +5,8 @@ class CopycatCoffeeshopDrinks::Scraper
     drinks = webpage.css("div.listicle-page")
     drinks.each do |drink_card|
       title = drink_card.css("h4.listicle-page__title a").text
-binding.pry
-      link = drink_card.css("h4.listicle-page__title href")
+      #binding.pry
+      #link = drink_card.css("h4.listicle-page__title href")
       drink = CopycatCoffeeshopDrinks::Drinks.new(title)
     end
 

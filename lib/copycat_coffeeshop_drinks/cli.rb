@@ -2,21 +2,20 @@ class CopycatCoffeeshopDrinks::CLI
 
   def call  #instance method
     puts "Welcome Fellow Coffee Lovers!"
-    puts "Please choose your favorite coffee drink from the list below that you'd like to make!"
-    CopycatCoffeeshopDrinks::Scraper.scrape_drinks
+    puts "Below is a list of fancy coffee drinks you can make in the comfort of your own kitchen!"
+    puts "*****"
     list_drinks
-    input = gets.strip.downcase
+    #main_menu (create a main menu method for selecting drinks)
   end
 
   def list_drinks
+    CopycatCoffeeshopDrinks::Scraper.scrape_drinks
     all_drinks = CopycatCoffeeshopDrinks::Drinks.all
-    all_drinks.each do |drink|
-      puts "#{drink.title}"
+    all_drinks.each.with_index(1) {|drink, index| puts "#{index}. #{drink.title}"}
+    puts "*****"
     end
-#binding.pry
   end
 
-end
 
 
 
