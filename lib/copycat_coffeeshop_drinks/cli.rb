@@ -3,6 +3,7 @@ class CopycatCoffeeshopDrinks::CLI
   def call  #instance method
     puts "Welcome Fellow Coffee Lovers!"
     puts "Below is a list of fancy coffee drinks you can make in the comfort of your own kitchen!"
+    puts ""
     puts "*****"
     list_drinks
     #main_menu (create a main_menu method for selecting drinks)
