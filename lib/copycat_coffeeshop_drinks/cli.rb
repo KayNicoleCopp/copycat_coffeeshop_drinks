@@ -1,20 +1,33 @@
 class CopycatCoffeeshopDrinks::CLI
 
   def call  #instance method
+    puts ""
     puts "Welcome Fellow Coffee Lovers!"
     puts "Below is a list of fancy coffee drinks you can make in the comfort of your own kitchen!"
     puts ""
-    puts "*****"
     list_drinks
-    #main_menu (create a main_menu method for selecting drinks)
+    main_menu
   end
 
   def list_drinks
     CopycatCoffeeshopDrinks::Scraper.scrape_drinks
     all_drinks = CopycatCoffeeshopDrinks::Drinks.all
     all_drinks.each.with_index(1) {|drink, index| puts "#{index}. #{drink.title}"}
-    puts "*****"
+    puts ""
     end
+
+    def main_menu
+    input = nil
+    while input != "exit"
+      puts "To see the recipe for a drink, enter the corresponding number below"
+      input = gets.strip.downcase
+
+      if input.to_i > 0 && <= CopycatCoffeeshopDrinks::Drinks.all.size
+        #need to see ingredients and instructions
+
+      end
+    end
+
   end
 
 

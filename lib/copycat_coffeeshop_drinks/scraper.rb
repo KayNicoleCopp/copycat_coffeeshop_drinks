@@ -6,11 +6,12 @@ class CopycatCoffeeshopDrinks::Scraper
     drinks.each do |drink_card|
       title = drink_card.css("h4.listicle-page__title a").text
       link = drink_card.css("h4.listicle-page__title a").attribute("href").value
-binding.pry
-      drink = CopycatCoffeeshopDrinks::Drinks.new(title)
+      drink = CopycatCoffeeshopDrinks::Drinks.new(title, link)
     end
 
-  #h4.listicle-page__title a.href = possible link
+def self.scrape_instruction_card
+  
+end
     #ingredient_card = webpage.css("div.recipe-ingredients")
 
     #ingredient_card.map do |link|
