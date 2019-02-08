@@ -12,12 +12,9 @@ class CopycatCoffeeshopDrinks::Scraper
 
  def self.scrape_ingredients(actual_drink)
     webpage = Nokogiri::HTML(open(actual_drink.link))
-    ingredients = webpage.css(".recipe-ingredients").text
+    ingredients = webpage.css(".recipe-ingredients")
     binding.pry
-    #recipe = webpage.css(".recipe-ingredients").text #error message saying undefined local method 'drink'
-    #recipe
   end
-    #ingredient_card = webpage.css("div.recipe-ingredients")
 
     #ingredient_card.map do |link|
       #binding.pry
