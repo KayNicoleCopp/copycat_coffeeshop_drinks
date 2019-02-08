@@ -1,5 +1,6 @@
 class CopycatCoffeeshopDrinks::Drink
-attr_accessor :title, :link
+attr_accessor :ingredients
+attr_reader :title, :link
 
 @@all = []
 def initialize(title, link)

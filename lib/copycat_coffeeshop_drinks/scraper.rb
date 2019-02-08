@@ -12,8 +12,8 @@ class CopycatCoffeeshopDrinks::Scraper
 
  def self.scrape_ingredients(actual_drink)
     webpage = Nokogiri::HTML(open(actual_drink.link))
-    ingredients = webpage.css(".recipe-ingredients")
-    binding.pry
+    array_of_ingredients = webpage.css(".recipe-ingredients li")
+    actual_drink.ingredients = array_of_ingredients.map {|ingredient| ingredient.text}
   end
 
     #ingredient_card.map do |link|

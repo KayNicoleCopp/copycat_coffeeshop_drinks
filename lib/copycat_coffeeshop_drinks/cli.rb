@@ -21,6 +21,7 @@ class CopycatCoffeeshopDrinks::CLI
     if input.between?(1,max)
       actual_drink = CopycatCoffeeshopDrinks::Drink.all[input-1]
       display_drink_ingredients(actual_drink)
+      #display_drink_instructions(actual_drink)
     else
       puts "\nPlease put in a valid number :)"
       list_drinks
@@ -30,6 +31,7 @@ class CopycatCoffeeshopDrinks::CLI
 
   def display_drink_ingredients(actual_drink)
     CopycatCoffeeshopDrinks::Scraper.scrape_ingredients(actual_drink)
+    actual_drink.ingredients.each {|ingredient| puts ingredient}
   end
 
   def menu
