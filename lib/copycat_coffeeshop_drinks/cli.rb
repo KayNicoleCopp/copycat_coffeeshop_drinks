@@ -14,20 +14,22 @@ class CopycatCoffeeshopDrinks::CLI
     all_drinks = CopycatCoffeeshopDrinks::Drinks.all
     all_drinks.each.with_index(1) {|drink, index| puts "#{index}. #{drink.title}"}
     puts ""
-    end
+  end
+
+  def choose_drink
+    puts "To see the recipe for a drink, enter the corresponding number below:"
+    input = gets.strip.to_i
+    
+  end
 
     def main_menu
-    input = nil
-    while input != "exit"
-      puts "To see the recipe for a drink, enter the corresponding number below"
-      input = gets.strip.downcase
-        if input.to_i > 0 #&& <= all_drinks.size
-        CopycatCoffeeshopDrinks::Scraper.scrape_instruction_card
+
+        #if input.to_i > 0 #&& <= CopycatCoffeeshopDrinks::Drinks.size
+        #CopycatCoffeeshopDrinks::Scraper.scrape_instruction_card
         #need to see ingredients and instructions
         #elsif input == "exit"
         #puts "Thanks for stopping by!"
-end
-        end
+        #end
      end
 
 
