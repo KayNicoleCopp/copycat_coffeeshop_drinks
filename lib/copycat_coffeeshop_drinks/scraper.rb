@@ -10,7 +10,8 @@ class CopycatCoffeeshopDrinks::Scraper
     end
 
 def self.scrape_instruction_card
-  ingredients = drink.css(".recipe-ingredients").text
+  ingredients = drink.css(".recipe-ingredients").text #error message saying undefined local method 'drink'
+  ingredients
 end
     #ingredient_card = webpage.css("div.recipe-ingredients")
 
