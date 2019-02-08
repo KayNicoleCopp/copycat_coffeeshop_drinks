@@ -8,22 +8,16 @@ class CopycatCoffeeshopDrinks::Scraper
       link = drink_card.css("h4.listicle-page__title a").attribute("href").value
       drink = CopycatCoffeeshopDrinks::Drinks.new(title, link)
     end
+  end
 
-def self.scrape_instruction_card
-  ingredients = drink.css(".recipe-ingredients").text #error message saying undefined local method 'drink'
-  ingredients
-end
+# def self.scrape_instruction_card
+#   ingredients = drink.css(".recipe-ingredients").text #error message saying undefined local method 'drink'
+#   ingredients
+# end
     #ingredient_card = webpage.css("div.recipe-ingredients")
 
     #ingredient_card.map do |link|
       #binding.pry
       #CopycatCoffeeshopDrinks::Ingredients.new(link, text)
-end
-
-  def scrape_ingredients
-  end
-
-  def scrape_instructions
-  end
 
 end

@@ -1,4 +1,4 @@
-class CopycatCoffeeshopDrinks::Drinks
+class CopycatCoffeeshopDrinks::Drink
 attr_accessor :title, :link
 
 @@all = []

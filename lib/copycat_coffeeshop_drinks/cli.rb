@@ -1,29 +1,36 @@
 class CopycatCoffeeshopDrinks::CLI
 
   def call  #instance method
-    puts ""
     puts "Welcome Fellow Coffee Lovers!"
     puts "Below is a list of fancy coffee drinks you can make in the comfort of your own kitchen!"
     puts ""
     list_drinks
-    main_menu
+    menu
   end
 
   def list_drinks
     CopycatCoffeeshopDrinks::Scraper.scrape_drinks
-    all_drinks = CopycatCoffeeshopDrinks::Drinks.all
+    all_drinks = CopycatCoffeeshopDrinks::Drink.all
     all_drinks.each.with_index(1) {|drink, index| puts "#{index}. #{drink.title}"}
-    puts ""
   end
 
   def choose_drink
-    puts "To see the recipe for a drink, enter the corresponding number below:"
+    puts "\nTo see the recipe for a drink, enter the corresponding number below:"
     input = gets.strip.to_i
-    
+    max = CopycatCoffeeshopDrinks::Drink.all.length
+    if input.between?(1,max)
+      display_ingredients(input)
+    else
+      puts "\nPlease put in a valid number :)"
+      choose_drink
+    end
   end
 
-    def main_menu
+  def display_ingredients(input)
+  end
 
+    def menu
+       choose_drink
         #if input.to_i > 0 #&& <= CopycatCoffeeshopDrinks::Drinks.size
         #CopycatCoffeeshopDrinks::Scraper.scrape_instruction_card
         #need to see ingredients and instructions
@@ -31,7 +38,6 @@ class CopycatCoffeeshopDrinks::CLI
         #puts "Thanks for stopping by!"
         #end
      end
-
 
   end
 
