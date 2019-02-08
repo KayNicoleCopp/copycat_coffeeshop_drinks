@@ -19,16 +19,16 @@ class CopycatCoffeeshopDrinks::CLI
     input = gets.strip.to_i
     max = CopycatCoffeeshopDrinks::Drink.all.length
     if input.between?(1,max)
-      drink = CopycatCoffeeshopDrinks::Drink.all[input-1]
-      display_drink_recipe(drink)
+      actual_drink = CopycatCoffeeshopDrinks::Drink.all[input-1]
+      display_drink_recipe(actual_drink)
     else
       puts "\nPlease put in a valid number :)"
       choose_drink
     end
   end
 
-  def display_drink_recipe(drink)
-    binding.pry 
+  def display_drink_ingredients(actual_drink)
+    CopycatCoffeeshopDrinks::Scraper.scrape_ingredients(actual_drink)
   end
 
     def menu
