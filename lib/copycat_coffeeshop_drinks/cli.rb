@@ -21,13 +21,14 @@ class CopycatCoffeeshopDrinks::CLI
     while input != "exit"
       puts "To see the recipe for a drink, enter the corresponding number below"
       input = gets.strip.downcase
-
-      if input.to_i > 0 && <= CopycatCoffeeshopDrinks::Drinks.all.size
-        #need to see ingredients and instructions
-
-      end
     end
 
+    if input.to_i > 0 #&& <= all_drinks.size
+        CopycatCoffeeshopDrinks::Scraper.scrape_instruction_card
+        #need to see ingredients and instructions
+
+    end
+end
   end
 
 
