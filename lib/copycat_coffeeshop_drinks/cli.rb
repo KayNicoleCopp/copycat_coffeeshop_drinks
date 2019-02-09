@@ -23,7 +23,8 @@ class CopycatCoffeeshopDrinks::CLI
       display_drink_ingredients(actual_drink)
       directions
       display_drink_directions(actual_drink)
-    elsif input == "list"
+      second_menu
+    elsif input == "list" #something wrong here, fix this
       call
     elsif input == "done"
       goodbye
@@ -59,6 +60,9 @@ class CopycatCoffeeshopDrinks::CLI
   def menu
     puts "\nTo see the recipe for a drink, enter the corresponding drink number:"
     choose_drink
+    end
+
+def second_menu
     puts "\nType 'list' to see them all again or 'done' at anytime to leave."
     choose_drink
   end
