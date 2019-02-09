@@ -15,10 +15,10 @@ class CopycatCoffeeshopDrinks::CLI
   end
 
   def choose_drink
-    input = gets.strip.to_i
-    max = CopycatCoffeeshopDrinks::Drink.all.length
-    if input.between?(1,max)
-      actual_drink = CopycatCoffeeshopDrinks::Drink.all[input-1]
+    input = gets.strip.downcase
+    #max = CopycatCoffeeshopDrinks::Drink.all.length
+    if input.to_i.between?(1,22)
+      actual_drink = CopycatCoffeeshopDrinks::Drink.all[input.to_i-1]
       ingredients
       display_drink_ingredients(actual_drink)
       directions
@@ -63,12 +63,12 @@ class CopycatCoffeeshopDrinks::CLI
     end
 
 def second_menu
-    puts "\nType 'list' to see them all again or 'done' at anytime to leave."
+    puts "\nType 'list' to see a list of drinks again or 'done' at anytime to leave."
     choose_drink
   end
 
   def goodbye
-    puts "Thanks for stopping by! Come back soon for another fancy coffee drink recipe!"
+    puts "\nThanks for stopping by! Come back soon for another fancy coffee drink recipe!"
   end
 
 
