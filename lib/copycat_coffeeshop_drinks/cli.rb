@@ -5,7 +5,7 @@ class CopycatCoffeeshopDrinks::CLI
     puts "Below is a list of fancy coffee drinks you can make in the comfort of your own kitchen!"
     puts ""
     list_drinks
-    menu
+    choose_drink
   end
 
   def list_drinks
@@ -20,7 +20,9 @@ class CopycatCoffeeshopDrinks::CLI
     max = CopycatCoffeeshopDrinks::Drink.all.length
     if input.between?(1,max)
       actual_drink = CopycatCoffeeshopDrinks::Drink.all[input-1]
+      ingredients
       display_drink_ingredients(actual_drink)
+      directions
       display_drink_directions(actual_drink)
     else
       puts "\nPlease put in a valid number :)"
@@ -29,18 +31,27 @@ class CopycatCoffeeshopDrinks::CLI
     end
   end
 
+  def ingredients
+    puts ""
+    puts "* I N G R E D I E N T S *"
+  end
+
+  def directions
+    puts ""
+    puts "* D I R E C T I O N S *"
+  end
+
   def display_drink_ingredients(actual_drink)
+    puts ""
     CopycatCoffeeshopDrinks::Scraper.scrape_ingredients(actual_drink)
     actual_drink.ingredients.each {|ingredient| puts ingredient}
   end
 
   def display_drink_directions(actual_drink)
+    puts ""
     CopycatCoffeeshopDrinks::Scraper.scrape_directions(actual_drink)
     actual_drink.directions.each {|step| puts step}
   end
 
-  def menu
-    choose_drink
-  end
 
   end
