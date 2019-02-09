@@ -1,5 +1,5 @@
 class CopycatCoffeeshopDrinks::Drink
-attr_accessor :ingredients
+attr_accessor :ingredients, :directions 
 attr_reader :title, :link
 
 @@all = []
