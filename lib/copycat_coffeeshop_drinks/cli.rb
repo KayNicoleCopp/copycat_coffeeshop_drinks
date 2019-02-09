@@ -16,7 +16,6 @@ class CopycatCoffeeshopDrinks::CLI
 
   def choose_drink
     input = gets.strip.downcase
-    #max = CopycatCoffeeshopDrinks::Drink.all.length
     if input.to_i.between?(1,22)
       actual_drink = CopycatCoffeeshopDrinks::Drink.all[input.to_i-1]
       ingredients
@@ -24,8 +23,8 @@ class CopycatCoffeeshopDrinks::CLI
       directions
       display_drink_directions(actual_drink)
       second_menu
-    elsif input == "list" #something wrong here, fix this (its wrong because gets.strip.to_i)
-      call
+    elsif input == "list" #this needs to be fixed to make it more user friendly
+      choose_drink
     elsif input == "done"
       goodbye
     else
@@ -63,7 +62,7 @@ class CopycatCoffeeshopDrinks::CLI
     end
 
 def second_menu
-    puts "\nType 'list' to see a list of drinks again or 'done' at anytime to leave."
+    puts "\nType 'list' to choose another corresponding coffee drink number or 'done' at anytime to leave."
     choose_drink
   end
 
