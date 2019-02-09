@@ -24,7 +24,7 @@ class CopycatCoffeeshopDrinks::CLI
       directions
       display_drink_directions(actual_drink)
       second_menu
-    elsif input == "list" #something wrong here, fix this
+    elsif input == "list" #something wrong here, fix this (its wrong because gets.strip.to_i)
       call
     elsif input == "done"
       goodbye
