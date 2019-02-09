@@ -24,7 +24,7 @@ class CopycatCoffeeshopDrinks::CLI
       directions
       display_drink_directions(actual_drink)
     elsif input == "list"
-      list_drinks
+      call
     elsif input == "done"
       goodbye
     else
