@@ -34,12 +34,12 @@ class CopycatCoffeeshopDrinks::CLI
 
   def ingredients
     puts ""
-    puts "* I N G R E D I E N T S *"
+    puts "\t* I N G R E D I E N T S *"
   end
 
   def directions
     puts ""
-    puts "* D I R E C T I O N S *"
+    puts "\t* D I R E C T I O N S *"
   end
 
   def display_drink_ingredients(actual_drink)
