@@ -23,8 +23,6 @@ class CopycatCoffeeshopDrinks::CLI
       directions
       display_drink_directions(actual_drink)
       second_menu
-    elsif input == "choose drink" #this needs to be fixed to make it more user friendly
-      choose_drink
     elsif input == "done"
       goodbye
     else
