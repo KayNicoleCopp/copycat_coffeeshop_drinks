@@ -22,8 +22,4 @@ class CopycatCoffeeshopDrinks::Scraper
     actual_drink.directions = array_of_directions.map {|step| step.text}
   end
 
-    #ingredient_card.map do |link|
-      #binding.pry
-      #CopycatCoffeeshopDrinks::Ingredients.new(link, text)
-
 end
