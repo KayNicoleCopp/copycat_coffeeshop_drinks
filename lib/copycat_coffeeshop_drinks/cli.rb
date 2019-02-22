@@ -16,12 +16,9 @@ class CopycatCoffeeshopDrinks::CLI
 
   def choose_drink
     input = gets.strip.downcase
-    if input.to_i.between?(1,22)
+    if input.to_i.between?(1,CopycatCoffeeshopDrinks::Drink.all.count)
       actual_drink = CopycatCoffeeshopDrinks::Drink.all[input.to_i-1]
-      ingredients
-      display_drink_ingredients(actual_drink)
-      directions
-      display_drink_directions(actual_drink)
+      display_drink_details(actual_drink)
       second_menu
     elsif input == "done"
       goodbye
@@ -42,15 +39,12 @@ class CopycatCoffeeshopDrinks::CLI
     puts "\t* D I R E C T I O N S *"
   end
 
-  def display_drink_ingredients(actual_drink)
+  def display_drink_details(actual_drink)
     puts ""
-    CopycatCoffeeshopDrinks::Scraper.scrape_ingredients(actual_drink)
+    CopycatCoffeeshopDrinks::Scraper.scrape_drink_details(actual_drink)
+    ingredients
     actual_drink.ingredients.each {|ingredient| puts ingredient}
-  end
-
-  def display_drink_directions(actual_drink)
-    puts ""
-    CopycatCoffeeshopDrinks::Scraper.scrape_directions(actual_drink)
+    directions
     actual_drink.directions.each {|step| puts step}
   end
 

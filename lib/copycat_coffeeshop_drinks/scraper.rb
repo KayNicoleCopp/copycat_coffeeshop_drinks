@@ -10,14 +10,10 @@ class CopycatCoffeeshopDrinks::Scraper
     end
   end
 
- def self.scrape_ingredients(actual_drink)
+ def self.scrape_drink_details(actual_drink)
     webpage = Nokogiri::HTML(open(actual_drink.link))
     array_of_ingredients = webpage.css(".recipe-ingredients li")
     actual_drink.ingredients = array_of_ingredients.map {|ingredient| ingredient.text}
-  end
-
-  def self.scrape_directions(actual_drink)
-    webpage = Nokogiri::HTML(open(actual_drink.link))
     array_of_directions = webpage.css(".recipe-directions__list li")
     actual_drink.directions = array_of_directions.map {|step| step.text}
   end
