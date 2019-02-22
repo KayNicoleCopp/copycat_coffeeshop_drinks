@@ -41,7 +41,7 @@ class CopycatCoffeeshopDrinks::CLI
 
   def display_drink_details(actual_drink)
     puts ""
-    CopycatCoffeeshopDrinks::Scraper.scrape_drink_details(actual_drink)
+    CopycatCoffeeshopDrinks::Scraper.scrape_drink_details(actual_drink) if actual_drink.ingredients == nil
     ingredients
     actual_drink.ingredients.each {|ingredient| puts ingredient}
     directions
@@ -51,7 +51,7 @@ class CopycatCoffeeshopDrinks::CLI
   def menu
     puts "\nTo see the recipe for a drink, enter the corresponding drink number:"
     choose_drink
-    end
+  end
 
 def second_menu
     puts "\nType a new drink number to view another coffee drink recipe or 'done' at anytime to leave."
